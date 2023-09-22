@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Cinema</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    </head>
+    <body>
+        <div class="container py-5">
+            <h3 class="text-center mb-4">Agregar Pelicula</h3>
+            <form action="#" th:action="@{/addmovie}" th:object="${movie}" method="post">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input class="form-control" type="text" th:field="*{name}" id="name" placeholder="Nombre"/>
+                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="genre">Genero</label>
+                    <input class="form-control" type="text" th:field="*{genre}" id="genre" placeholder="Genero"/>
+                    <span th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="clasification">Clasificación</label>
+                    <input class="form-control" type="text" th:field="*{clasification}" id="clasification" placeholder="Clasificación"/>
+                    <span th:if="${#fields.hasErrors('clasification')}" th:errors="*{clasification}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="director">Director</label>
+                    <input class="form-control" type="text" th:field="*{director}" id="director" placeholder="Director"/>
+                    <span th:if="${#fields.hasErrors('director')}" th:errors="*{director}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="start">Hora Inicio</label>
+                    <input class="form-control" type="time" th:field="*{start}" id="start" placeholder="Hora Inicio"/>
+                    <span th:if="${#fields.hasErrors('start')}" th:errors="*{start}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="end">Hora Fin</label>
+                    <input class="form-control" type="time" th:field="*{end}" id="end" placeholder="Hora Fin"/>
+                    <span th:if="${#fields.hasErrors('end')}" th:errors="*{end}"></span>
+                </div>
+                <h5 class="mt-4">Asientos disponibles</h5>
+                <div class="form-group">
+                    <label for="rows">Filas</label>
+                    <input class="form-control" type="number" th:field="*{rows}" id="rows" placeholder="Filas"/>
+                    <span th:if="${#fields.hasErrors('rows')}" th:errors="*{rows}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="columns">Columnas</label>
+                    <input class="form-control" type="number" th:field="*{columns}" id="columns" placeholder="Columnas"/>
+                    <span th:if="${#fields.hasErrors('columns')}" th:errors="*{columns}"></span>
+                </div>
+                <input class="btn btn-primary" type="submit" value="Agregar Película"/>   
+            </form>
+        </div>
+    </body>
+</html>

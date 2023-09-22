@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Genero</th>
+                    <th>Clasificacion</th>
+                    <th>Hora Inicio</th>
+                    <th>Hora Fin</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th.each="movie:${movies}">
+                    <td>${movie.getName}</td>
+                    <td>${movie.getGenre}</td>
+                    <td>${movie.getClasification}</td>
+                    <td>${movie.getStart}</td>
+                    <td>${movie.getEnd}</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
